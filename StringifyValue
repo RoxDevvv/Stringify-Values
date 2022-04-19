@@ -1,0 +1,11 @@
+// stringify values of object inside array of objects
+const StringifyValue = (array) => {
+    return array.map(obj => {
+        for (var key in obj) {
+            if (obj.hasOwnProperty(key)) {
+                if (typeof obj[key] != 'string') { obj[key] = JSON.stringify(obj[key]); }
+            }
+        }
+        return obj;
+    });
+}
